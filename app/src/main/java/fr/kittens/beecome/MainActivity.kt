@@ -6,19 +6,19 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val buttonzone1 = findViewById<Button>(R.id.button_zone_1)
         val buttonzone2 = findViewById<Button>(R.id.button_zone_2)
         buttonzone1.setOnClickListener(View.OnClickListener {
-            val newIntent = Intent(application,GroupeInfoActivity::class.java)
+            val newIntent = Intent(application,Zone1::class.java)
             startActivity(newIntent)
         })
 
         buttonzone2.setOnClickListener(View.OnClickListener {
-            val newIntent = Intent(application,RayonsActivity::class.java)
+            val newIntent = Intent(application,zone2::class.java)
             startActivity(newIntent)
         })
 
