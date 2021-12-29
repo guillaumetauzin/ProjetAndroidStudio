@@ -56,7 +56,7 @@ class Zone1 : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_student)
+        setContentView(R.layout.activity_zone1)
         setHeaderTitle("Students")
         showBack()
         val students = arrayListOf<Student>()
