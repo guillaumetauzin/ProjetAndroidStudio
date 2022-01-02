@@ -20,8 +20,8 @@ class Zone2 : BaseActivity() {
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewCat)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val studentAdapter = CategoriesAdapter(categories)
-        recyclerView.adapter=studentAdapter
+        val categorieAdapter = CategorieAdapter(categories)
+        recyclerView.adapter=categorieAdapter
 
         val okHttpClient: OkHttpClient = OkHttpClient.Builder().build()
         val mRequestURL="https://djemam.com/epsi/categories.json"
@@ -48,7 +48,7 @@ class Zone2 : BaseActivity() {
                             jsStudent.optString("title",""),
                             jsStudent.optString("products_url",""))
                         categories.add(categorie)
-                        Log.d("student",categorie.category_id)
+                        Log.d("Categorie ",categorie.title)
                     }
                     Log.d("Student","${categories.size}")
 
@@ -58,7 +58,7 @@ class Zone2 : BaseActivity() {
 
 
                     runOnUiThread(Runnable {
-                        studentAdapter.notifyDataSetChanged()
+                        categorieAdapter.notifyDataSetChanged()
                     })
                 }
             }

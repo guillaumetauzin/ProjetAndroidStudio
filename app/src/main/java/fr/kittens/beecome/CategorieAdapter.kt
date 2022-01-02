@@ -1,16 +1,14 @@
 package fr.kittens.beecome
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import fr.kittens.beecome.CategoriesAdapter.ViewHolder
+import fr.kittens.beecome.CategorieAdapter.ViewHolder
 
-class CategoriesAdapter(val categories: ArrayList<Categories>): RecyclerView.Adapter<ViewHolder>() {
+class CategorieAdapter(val categories: ArrayList<Categories>): RecyclerView.Adapter<ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
         val textViewName = view.findViewById<TextView>(R.id.textViewName)
