@@ -1,16 +1,18 @@
 package fr.kittens.beecome
 
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import fr.kittens.beecome.CategorieAdapter.ViewHolder
+import android.app.Application
 
 class CategorieAdapter(val categorie: ArrayList<Categorie>): RecyclerView.Adapter<ViewHolder>() {
-
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
         val textViewName = view.findViewById<TextView>(R.id.textCategorie)
         //val textViewEmail = view.findViewById<TextView>(R.id.textViewEmail)
@@ -33,7 +35,10 @@ class CategorieAdapter(val categorie: ArrayList<Categorie>): RecyclerView.Adapte
         holder.contentLayout.setOnClickListener(View.OnClickListener {
             Log.d("URL des produits", categorie.products_url)
 
-            //(holder.contentLayout.context.applicationContext as AppKittens).showToast(categorie.products_url)
+
+
+
+
         })
     }
 

@@ -12,16 +12,17 @@ import java.io.IOException
 class ZoneProduit : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val product = intent.getStringExtra("product")
         setContentView(R.layout.activity_zone2)
         setHeaderTitle("Rayons")
         showBack()
 
-        val categories = arrayListOf<Categorie>()
+        val produits = arrayListOf<Produit>()
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewCat)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val categoriesAdapter = CategorieAdapter(categories)
-        recyclerView.adapter=categoriesAdapter
+        val produitsAdapter = ProduitAdapter(produits)
+        recyclerView.adapter=produitsAdapter
 
         val okHttpClient: OkHttpClient = OkHttpClient.Builder().build()
         val mRequestURL="https://djemam.com/epsi/categories.json"
@@ -44,18 +45,18 @@ class ZoneProduit : BaseActivity() {
                     val jsArrayStudents= jsStudents.getJSONArray("items")
                     for(i in 0 until jsArrayStudents.length()){
                         val jsStudent = jsArrayStudents.getJSONObject(i)
-                        val categorie = Categorie(jsStudent.optString("category_id",""),
-                            jsStudent.optString("title",""),
-                            jsStudent.optString("products_url",""))
-                        categories.add(categorie)
-                        Log.d("Categorie ",categorie.title)
+                        val produit = Produit(jsStudent.optString("name",""),
+                            jsStudent.optString("description",""),
+                            jsStudent.optString("picture_url",""))
+                        produits.add(produit)
+                        Log.d("Categorie ",produit.name)
                     }
-                    Log.d("Student","${categories.size}")
+                    Log.d("Student","${produits.size}")
 
                     //
 
                     runOnUiThread(Runnable {
-                        categoriesAdapter.notifyDataSetChanged()
+                        produitsAdapter.notifyDataSetChanged()
                     })
                 }
             }

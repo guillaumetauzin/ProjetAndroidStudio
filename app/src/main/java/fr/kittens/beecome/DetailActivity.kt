@@ -18,11 +18,11 @@ class DetailActivity : BaseActivity() {
         Picasso.get().load(urlImage).into(imageView)
         val intent = Intent(this, DetailActivity::class.java)
         intent.putExtra("info", "a")
-        intent.getStringExtra("info").let { setTitle(it) }
-        intent.getStringExtra("nomprenom").let { setTitle(it) }
-        intent.getStringExtra("email").let { setTitle(it) }
-        intent.getStringExtra("groupe").let { setTitle(it) }
-        intent.getStringExtra("urlschool").let { setTitle(it) }
+        intent.getStringExtra("info")
+        intent.getStringExtra("nomprenom")
+        intent.getStringExtra("email")
+        intent.getStringExtra("groupe")
+        intent.getStringExtra("urlschool")
 
     }
 }
