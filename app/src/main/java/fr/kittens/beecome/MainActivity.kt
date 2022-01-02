@@ -1,7 +1,6 @@
 package fr.kittens.beecome
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -18,7 +17,7 @@ class MainActivity : BaseActivity() {
         })
 
         buttonzone2.setOnClickListener(View.OnClickListener {
-            val newIntent = Intent(application,zone2::class.java)
+            val newIntent = Intent(application,Zone2::class.java)
             startActivity(newIntent)
         })
 

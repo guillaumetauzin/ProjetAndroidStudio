@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Beecome">
         <activity
-            android:name=".zone2"
+            android:name=".Zone2"
             android:exported="false" />
         <activity
             android:name=".Zone1"

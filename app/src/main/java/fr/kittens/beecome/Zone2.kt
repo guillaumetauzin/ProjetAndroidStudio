@@ -9,18 +9,22 @@ import org.json.JSONObject
 import java.io.IOException
 
 
-class zone2 : BaseActivity() {
+class Zone2 : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_zone2)
         setHeaderTitle("Category")
         showBack()
 
-        val testView
-        testView.layoutManager = LinearLayoutManager(this)
+        val categories = arrayListOf<Categories>()
+
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewCat)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        val studentAdapter = CategoriesAdapter(categories)
+        recyclerView.adapter=studentAdapter
 
         val okHttpClient: OkHttpClient = OkHttpClient.Builder().build()
-        val mRequestURL="http://djemam.com/epsi/categories.json"
+        val mRequestURL="https://djemam.com/epsi/categories.json"
         val request = Request.Builder()
             .url(mRequestURL)
             .get()
@@ -40,12 +44,22 @@ class zone2 : BaseActivity() {
                     val jsArrayStudents= jsStudents.getJSONArray("items")
                     for(i in 0 until jsArrayStudents.length()){
                         val jsStudent = jsArrayStudents.getJSONObject(i)
-                        val category = Student(jsStudent.optString("title",""),
-                            jsStudent.optString("email",""),
-                            jsStudent.optString("products_url",""),jsStudent.optString("phone",""),jsStudent.optString("city",""),jsStudent.optString("zipcode",""))
-                        categories.add(category)
-                        Log.d("student",category.name)
+                        val categorie = Categories(jsStudent.optString("category_id",""),
+                            jsStudent.optString("title",""),
+                            jsStudent.optString("products_url",""))
+                        categories.add(categorie)
+                        Log.d("student",categorie.category_id)
                     }
+                    Log.d("Student","${categories.size}")
+
+
+
+
+
+
+                    runOnUiThread(Runnable {
+                        studentAdapter.notifyDataSetChanged()
+                    })
                 }
             }
 
