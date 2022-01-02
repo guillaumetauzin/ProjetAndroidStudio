@@ -49,7 +49,10 @@ class Zone2 : BaseActivity() {
                             jsStudent.optString("title",""),
                             jsStudent.optString("products_url",""))
                         categories.add(categorie)
-                        Log.d("Categorie ",categorie.title)
+
+                        Log.d("Categorie Id",categorie.category_id)
+                        Log.d("Categorie Titre ",categorie.title)
+                        Log.d("Categorie Url ",categorie.products_url)
                     }
                     Log.d("Student","${categories.size}")
 
