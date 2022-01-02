@@ -2,4 +2,12 @@
     <string name="app_name">Beecome</string>
     <string name="Zone_1">Zone 1</string>
     <string name="Zone_2">Zone 2</string>
+    <string name="Etudiant_1">Etudiant 1</string>
+    <string name="Etudiant_2">Etudiant 2</string>
+    <string name="Etudiant_3">Etudiant 3</string>
+    <string name="info_student">Info Etudiant</string>
+    <string name="nom_prenom">Nom Prenom</string>
+    <string name="email">Email</string>
+    <string name="Groupe">Groupe</string>
+    <string name="url_school">http://www.epsi.fr/</string>
 </resources>
