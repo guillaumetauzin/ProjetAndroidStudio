@@ -27,6 +27,11 @@ class Zone1 : BaseActivity() {
         buttonEtudiant2.setOnClickListener(View.OnClickListener {
             val newIntent = Intent(application,DetailActivity::class.java)
             newIntent.putExtra("title","Etudiant 2")
+            newIntent.putExtra("info","Etudiant 2")
+            newIntent.putExtra("nomprenom","David Pujadas")
+            newIntent.putExtra("email","DavidPujadas@outlook.com")
+            newIntent.putExtra("groupe","Groupe 2")
+            newIntent.putExtra("urlschool","http://www.epsi.fr")
             newIntent.putExtra("urlImage","https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/2/3/1/2310c9171a_50157784_pia23441.jpg")
             startActivity(newIntent)
         })
@@ -34,9 +39,13 @@ class Zone1 : BaseActivity() {
         buttonEtudiant3.setOnClickListener(View.OnClickListener {
             val newIntent = Intent(application,DetailActivity::class.java)
             newIntent.putExtra("title","Etudiant 3")
+            newIntent.putExtra("info","Etudiant 3")
+            newIntent.putExtra("nomprenom","Louise Feullier")
+            newIntent.putExtra("email","LouiFeul@gmail.com")
+            newIntent.putExtra("groupe","Groupe 3")
+            newIntent.putExtra("urlschool","http://www.epsi.fr")
             newIntent.putExtra("urlImage","https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg")
             startActivity(newIntent)
         })
-
     }
 }
