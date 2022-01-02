@@ -13,15 +13,15 @@ class Zone2 : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_zone2)
-        setHeaderTitle("Category")
+        setHeaderTitle("Categories")
         showBack()
 
-        val categories = arrayListOf<Categories>()
+        val categories = arrayListOf<Categorie>()
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewCat)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val categorieAdapter = CategorieAdapter(categories)
-        recyclerView.adapter=categorieAdapter
+        val categoriesAdapter = CategorieAdapter(categories)
+        recyclerView.adapter=categoriesAdapter
 
         val okHttpClient: OkHttpClient = OkHttpClient.Builder().build()
         val mRequestURL="https://djemam.com/epsi/categories.json"
@@ -44,7 +44,7 @@ class Zone2 : BaseActivity() {
                     val jsArrayStudents= jsStudents.getJSONArray("items")
                     for(i in 0 until jsArrayStudents.length()){
                         val jsStudent = jsArrayStudents.getJSONObject(i)
-                        val categorie = Categories(jsStudent.optString("category_id",""),
+                        val categorie = Categorie(jsStudent.optString("category_id",""),
                             jsStudent.optString("title",""),
                             jsStudent.optString("products_url",""))
                         categories.add(categorie)
@@ -52,13 +52,10 @@ class Zone2 : BaseActivity() {
                     }
                     Log.d("Student","${categories.size}")
 
-
-
-
-
+                    //
 
                     runOnUiThread(Runnable {
-                        categorieAdapter.notifyDataSetChanged()
+                        categoriesAdapter.notifyDataSetChanged()
                     })
                 }
             }

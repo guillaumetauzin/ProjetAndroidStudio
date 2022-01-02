@@ -11,6 +11,7 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_main)
         val buttonzone1 = findViewById<Button>(R.id.button_zone_1)
         val buttonzone2 = findViewById<Button>(R.id.button_zone_2)
+
         buttonzone1.setOnClickListener(View.OnClickListener {
             val newIntent = Intent(application,Zone1::class.java)
             startActivity(newIntent)
