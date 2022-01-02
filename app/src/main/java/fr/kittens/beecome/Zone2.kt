@@ -1,5 +1,6 @@
 package fr.kittens.beecome
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -52,7 +53,6 @@ class Zone2 : BaseActivity() {
                     }
                     Log.d("Student","${categories.size}")
 
-                    //
 
                     runOnUiThread(Runnable {
                         categoriesAdapter.notifyDataSetChanged()

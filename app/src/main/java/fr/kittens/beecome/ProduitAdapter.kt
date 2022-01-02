@@ -31,7 +31,7 @@ class ProduitAdapter(val produit: ArrayList<Produit>): RecyclerView.Adapter<View
         //holder.textViewCity.text=student.title
 
         holder.contentLayout.setOnClickListener(View.OnClickListener {
-            Log.d("URL des produits", categorie.picture_url)
+            Log.d("Image:", categorie.picture_url)
 
             //(holder.contentLayout.context.applicationContext as AppKittens).showToast(categorie.products_url)
         })
