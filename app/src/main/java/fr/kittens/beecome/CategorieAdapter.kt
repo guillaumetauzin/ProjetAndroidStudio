@@ -32,6 +32,7 @@ class CategorieAdapter(val categorie: ArrayList<Categorie>): RecyclerView.Adapte
 
         holder.contentLayout.setOnClickListener(View.OnClickListener {
             Log.d("URL des produits", categorie.products_url)
+
             //(holder.contentLayout.context.applicationContext as AppKittens).showToast(categorie.products_url)
         })
     }

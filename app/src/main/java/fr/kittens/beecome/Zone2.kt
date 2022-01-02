@@ -13,7 +13,7 @@ class Zone2 : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_zone2)
-        setHeaderTitle("Categories")
+        setHeaderTitle("Rayons")
         showBack()
 
         val categories = arrayListOf<Categorie>()
