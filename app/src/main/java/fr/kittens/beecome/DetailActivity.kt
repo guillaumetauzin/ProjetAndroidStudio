@@ -17,12 +17,11 @@ class DetailActivity : BaseActivity() {
         intent.getStringExtra("title")?.let { setHeaderTitle(it) }
         Picasso.get().load(urlImage).into(imageView)
         val intent = Intent(this, DetailActivity::class.java)
-        intent.putExtra("info", "a")
-        intent.getStringExtra("info")
-        intent.getStringExtra("nomprenom")
-        intent.getStringExtra("email")
-        intent.getStringExtra("groupe")
-        intent.getStringExtra("urlschool")
+        intent.getStringExtra("info")?.let { setHeaderTitle(it) }
+        intent.getStringExtra("nomprenom")?.let { setHeaderTitle(it) }
+        intent.getStringExtra("email")?.let { setHeaderTitle(it) }
+        intent.getStringExtra("groupe")?.let { setHeaderTitle(it) }
+        intent.getStringExtra("urlschool")?.let { setHeaderTitle(it) }
 
     }
 }

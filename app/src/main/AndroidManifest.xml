@@ -18,6 +18,10 @@
             android:name=".Zone1"
             android:exported="false" />
         <activity
+            android:name=".DetailActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
